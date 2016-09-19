@@ -39,12 +39,12 @@ body.landing {
     -webkit-transform: scaleX(0.9) translateY(3rem); /* scales element to  90% of its width and moves it 3rem down */
     -moz-transform: scaleX(0.9) translateY(3rem);
     transform: scaleX(0.9) translateY(3rem);
-    -webkit-transition: all 0.25s ease-in-out; /* we want to transition all CSS properties, last a quarter of a second and the timing to ease in out */
-    -moz-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
-    -webkit-transition-delay: 0.2s;
-    -moz-transition-delay: 0.2s;
-    transition-delay: 0.2s;
+    -webkit-transition: all 0.75s linear; /* we want to transition all CSS properties, last a quarter of a second and the timing to ease in out */
+    -moz-transition: all 0.75s linear;
+    transition: all 0.75s linear;
+    -webkit-transition-delay: 1s;
+    -moz-transition-delay: 1s;
+    transition-delay: 1s;
 }
 
 .point .point-title {
