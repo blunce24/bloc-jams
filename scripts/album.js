@@ -30,6 +30,21 @@ var albumMarconi = {
      ]
  };
 
+var albumEdison = {
+     title: 'The Lightbulb',
+     artist: 'Thomas Edison',
+     label: 'Electric',
+     year: '1879',
+     albumArtUrl: 'assets/images/album_covers/06.png',
+     songs: [
+         { title: 'Electric Avenue', duration: '3:51' },
+         { title: 'All of the Lights', duration: '4:21' },
+         { title: 'Electric Feel', duration: '3:11'},
+         { title: 'Blinded by the Light', duration: '5:15' },
+         { title: 'She\'s Electric', duration: '2:45'}
+     ]
+ };
+
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -66,6 +81,18 @@ var createSongRow = function(songNumber, songName, songLength) {
      }
  };
  
+var albumCover = document.getElementsByClassName('album-cover-art')[0];
+
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
+     albumCover.addEventListener('click', function(event) {
+         var albumTitle = document.getElementsByClassName('album-view-title')[0];
+         if (albumTitle.firstChild.nodeValue === "The Colors") {
+             setCurrentAlbum(albumMarconi);
+         } else if (albumTitle.firstChild.nodeValue === "The Telephone") {
+             setCurrentAlbum(albumEdison);
+         } else if (albumTitle.firstChild.nodeValue === "The Lightbulb") {
+             setCurrentAlbum(albumPicasso);
+         }
+     });
  };
