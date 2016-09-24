@@ -68,10 +68,16 @@ var createSongRow = function(songNumber, songName, songLength) {
 
 // used to travel up the DOM tree
 var findParentByClassName = function(elem, targetClass) {
+    if (elem.parentElement === null) {
+        alert("No parent found");
+    }
     for ( ; elem && elem !== document; elem = elem.parentNode) {
         if (elem.parentNode.className === targetClass) {
             return elem.parentNode;
         }
+    }
+    if (elem === document) {
+        alert("No parent found with that class name");
     }
 };
 
