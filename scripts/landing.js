@@ -1,33 +1,33 @@
-var pointsArray = document.getElementsByClassName('point');
-
-var animatePoints = function(points) {
-          
-    var revealPoint = function(i) {
-        points[i].style.opacity = 1;
-        points[i].style.transform = "scaleX(1) translateY(0)";
-        points[i].style.mstransform = "scaleX(1) translateY(0)";
-        points[i].style.WebkitTransform = "scaleX(1) translateY(0)";
-    }
+var animatePoints = function() {
     
-    for (var j = 0; j < points.length; j++) {
-        revealPoint(j);
-    }
-                
+    var revealPoint = function() {
+        // jQuery selection of .point and use of css() method
+        $(this).css({
+            opacity: 1,
+            // jQuery compatible with most browsers
+            transform: 'scaleX(1) translateY(0)'
+        });
+    };
+    
+    // revealPoint doesn't need an argument and replace for loop with $.each()
+    $.each($('.point'), revealPoint);
 };
-            
-window.onload = function() {
+ 
+
+// add $() to convert window to jQuery object
+$(window).load(function() {
     // for large screens
-    window.onload = function() {
-        if (window.innerHeight > 950) {
-            animatePoints(pointsArray);
-        }
+    // update .innerheight to jQuery height()
+    if ($(window).height() > 950) {
+        animatePoints();
     }
-    var sellingPoints = document.getElementsByClassName('selling-points')[0];
-    var scrollDistance = sellingPoints.getBoundingClientRect().top - window.innerHeight + 200;
     
-    window.addEventListener('scroll', function(event) {
-        if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance) {
-            animatePoints(pointsArray);
+    // replace getBoundingClientRect() with jQuery offset()
+    var scrollDistance = $('.selling-points').offset().top - $(window).height() + 200;
+    
+    $(window).scroll(function(event) {
+        if ($(window).scrollTop() >= scrollDistance) {
+            animatePoints();
         }
     });
-}
+});
