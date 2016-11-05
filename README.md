@@ -2,13 +2,7 @@
 Project for Frontend Web Development Foundation
 
 ## Summary
-For my first project, I set out to build BlocJams, a replica of Spotify, with the guidance of Bloc. The application was a vehicle to learn basic HTML and CSS, as well as front-end programming using vanilla JavaScript and jQuery. I learned a lot through this process and encountered some interesting challenges.
-
-![](https://github.com/blunce24/portfolio/tree/master/img/Landing.png)
-
-![](https://github.com/blunce24/portfolio/tree/master/img/Collection.png)
-
-![](https://github.com/blunce24/portfolio/tree/master/img/Album.png)
+For my first project, I set out to build [BlocJams](http://blairlunceford.com/portfolio/blocjams/), a replica of Spotify, with the guidance of Bloc. The application was a vehicle to learn basic HTML and CSS, as well as front-end programming using vanilla JavaScript and jQuery. I learned a lot through this process and encountered some interesting challenges.
 
 ## Tech
 BlocJams is built with HTML/CSS, JavaScript, and jQuery
